@@ -1,11 +1,20 @@
 body {
   background-color: lightskyblue;
   margin: 0;
+
+  .dia-de-la-mujer {
+    color: blue;
+  }
+
+  .titulo-principal {
+    color: pink;
+  }
+
   .contenedor-tarjetas {
     display: flex;
-    flex-wrap: wrap
-  }
-  .contenedor-vacio {
-    background: red
+    flex-wrap: wrap;
+    .card {
+      background: red;
+    }
   }
 }

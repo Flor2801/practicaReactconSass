@@ -1,31 +1,49 @@
 import './Tarjeta.scss';
-import imagenCamion from '../imgs/camion .jpeg';
 
-const Tarjeta = ({price, title, freeShipping, imagen }) => {
-  console.log('props de Tarjeta', price, title, freeShipping);
 
-  const mostrarTitulo = true;
 
-  return (
-    <article className="tarjeta"> 
+// import imagenCamion from '../imgs/camion .jpeg';
 
-    <img src={imagen} />
+const Tarjeta = (props) => {
+
+  const envio = props.free_shipping
+
+  return(
+
+    <div className="card">
+     <h2>{props.titulo}</h2>
+     <h2>{props.price}</h2>
+     {envio ? <h5>ENVIO GRATIS</h5> : <h5>ENVIO A CARGO DEL COMPRADOR</h5>}
+    </div>
+
+  )
+}
+
+// const Tarjeta = ({price, title, freeShipping, imagen }) => {
+//   console.log('props de Tarjeta', price, title, freeShipping);
+
+//   const mostrarTitulo = true;
+
+//   return (
+//     <article className="tarjeta"> 
+
+//     <img src={imagen} />
     
-    {mostrarTitulo && <h4>{title}</h4>}
+//     {mostrarTitulo && <h4>{title}</h4>}
 
-      <h5>{price}</h5>
+//       <h5>{price}</h5>
 
-      {freeShipping === true && <img src={imagenCamion}/>}
+//       {freeShipping === true && <img src={imagenCamion}/>}
 
-      {/* TAREA:
-      El objeto "producto" en App.js tiene una propiedad "free_shipping"
-       que se refiere al envio gratuito
-       Hacer en el componente Tarjeta.js una condicion tal que:
-       - Si free_shipping es true, se muestre la imagen de un camioncito (la que quieran)
-       - Si free_shipping es false, no se muestre nada.  */}
-    </article>
-  );
-};
+//       {/* TAREA:
+//       El objeto "producto" en App.js tiene una propiedad "free_shipping"
+//        que se refiere al envio gratuito
+//        Hacer en el componente Tarjeta.js una condicion tal que:
+//        - Si free_shipping es true, se muestre la imagen de un camioncito (la que quieran)
+//        - Si free_shipping es false, no se muestre nada.  */}
+//     </article>
+//   );
+// };
 
 export default Tarjeta;
 
